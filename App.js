@@ -1,15 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+//import {createAppContainer,createSwitchNavigator} from 'react-navigation';
+import SignUpLoginScreen from './screen/SignUpLoginScreen';
 
-export default function App() {
+export default class App extends React.Component{
+  constructor(){
+    super()
+    this.state={
+      emailId:'',
+      password:'',
+      firstName:'',
+      lastName:'',
+      address:'',
+      contact:'',
+      confirmPassword:'',
+      isModalVisible:'false'
+    }
+  }
+  render(){
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <SignUpLoginScreen/>
     </View>
   );
+  }
 }
+/*const SwitchNavigator = createSwitchNavigator({
+  WelcomeScreen:{screen:WelcomeScreen},
+})
+
+const AppContainer = createAppContainer(SwitchNavigator);*/
 
 const styles = StyleSheet.create({
   container: {
